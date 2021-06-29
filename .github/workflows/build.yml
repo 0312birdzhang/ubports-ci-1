@@ -70,7 +70,7 @@ jobs:
         repo init -u https://github.com/Halium/android -b halium-9.0 --depth=1
         mkdir -p $ANDROID_ROOT/.repo/local_manifests
         wget https://raw.githubusercontent.com/ubuntu-touch-clover/local_manifests/halium-9.0/$DEVICE.xml -O $ANDROID_ROOT/.repo/local_manifests/$DEVICE.xml
-        repo sync -j8 -c --no-clone-bundle --no-tags
+        repo sync -j8 -c --no-clone-bundle --no-tags --optimized-fetch --prune
     
     - name: Build HAL
       run: |
